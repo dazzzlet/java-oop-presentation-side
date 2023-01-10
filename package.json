@@ -1,0 +1,19 @@
+{
+  "name": "netcompany-mdx-slide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck main-slide.mdx"
+  },
+  "keywords": [
+    "slide",
+    "netcompany"
+  ],
+  "author": "truongnln",
+  "license": "ISC",
+  "devDependencies": {
+    "code-surfer": "3.1.0",
+    "mdx-deck": "3.0.13"
+  }
+}
