@@ -1,19 +1,22 @@
 import React from "react";
-import { Footer } from "theme-ui";
+import styles from "./introduction.css";
+const redDash = require('./../assets/red-dash.png');
+const logo = require('./../assets/logo-white.png');
 
-export const IntroductionLayout = ({ children }) => {
+export const IntroductionLayout = ({ title, department }) => {
   return (
     <>
-      <div
-        style={{
-          width: "100vw",
-          height: "100vh",
-          padding: "3em",
-        }}
-      >
-        {children}
-        <footer></footer>
+      <div className={styles.container}>
+        <div>
+
+          <span className={styles.department}>{department}</span>
+          <h1 className={styles.mainTitle}>{title}</h1>
+          <img className={styles.redDash} src={redDash} alt="netcompany" />
+          <img className={styles.logo} src={logo} alt="netcompany" />
+
+        </div>
       </div>
+      <span className={styles.copyright}>© Copyright Netcompany</span>
     </>
   );
 };

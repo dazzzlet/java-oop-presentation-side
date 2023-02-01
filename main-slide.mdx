@@ -1,24 +1,72 @@
 import myTheme from "./src/themes/main";
 import { IntroductionLayout } from "./src/layout/introduction";
-import { Footer } from "theme-ui";
+import { WhiteLayout } from "./src/layout/white-layout";
+import { CodeLayout } from "./src/layout/code-layout";
+import { CodeColumnLayout, LayoutStep } from "./src/layout/code-column-layout";
+import { CodeSurfer } from "@code-surfer/standalone";
+import "prismjs/components/prism-java";
+import { Head } from "mdx-deck";
 
 export const theme = myTheme;
 
-Hello
+<Head>
+  <title>yeah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800;900&family=Nunito&family=Varela+Round&display=swap" rel="stylesheet"/>
+</Head>
 
-<Footer>
-  <span>© Copyright Netcompany</span>
-</Footer>
+
+Hello
 
 ---
 
-<IntroductionLayout>
+<IntroductionLayout title={"DAILY COMMUNICATION\nSEMINAR"} department={"Netcompany"}/>
+<Notes>Con bo mau xanh</Notes>
 
-# DAILY COMMUNICATION <br/>SEMINAR
-Netcompany
+---
 
-</IntroductionLayout>
+<WhiteLayout title={"Agenda"}>
 
-<Footer>
-  <span>© Copyright Netcompany</span>
-</Footer>
+- Communication principles.
+- Daily communication.
+
+</WhiteLayout>
+
+---
+
+<CodeLayout title={"Agenda"}>
+
+  ```java 10:15 file=./demo-files/demo.java showNumbers
+  ```
+
+  ```java 20:25 file=./demo-files/demo.java showNumbers
+  ```
+
+</CodeLayout>
+
+---
+
+<CodeColumnLayout title={"Agenda"}>
+
+  <LayoutStep>
+
+  ```java 10:15 file=./demo-files/demo.java showNumbers
+  ```
+
+  ```java 10:15 file=./demo-files/demo.java showNumbers
+  ```
+
+  </LayoutStep>
+
+  <LayoutStep>
+
+  ```java 20:25 file=./demo-files/demo.java showNumbers
+  ```
+
+  ```java 58:70 file=./demo-files/demo.java showNumbers
+  ```
+
+  </LayoutStep>
+
+</CodeColumnLayout>

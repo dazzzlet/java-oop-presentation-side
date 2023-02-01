@@ -1,0 +1,36 @@
+:local(.container) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 2em;
+    background-color: #fff;
+    color: #0f2147;
+    font-size: 35px;
+}
+
+:local(.container>h1) {
+    margin: 0;
+}
+
+:local(.container ul>li) {
+    line-height: 2em;
+}
+
+:local(.redDash) {
+    max-width: 1em;
+}
+
+:local(.logo) {
+    position: absolute;
+    bottom: 1em;
+    max-width: 4em;
+}
+
+:local(.slideNumber) {
+    position: absolute;
+    font-size: 0.8em;
+    bottom: 1.2em;
+    right: 1.2em;
+}

@@ -1,1 +1,5 @@
 node_modules
+_node_modules
+__node_modules
+___node_modules
+.vscode

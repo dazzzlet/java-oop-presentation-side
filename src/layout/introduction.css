@@ -1,0 +1,50 @@
+:local(.container) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Calibri, sans-serif";
+    font-size: 35px;
+}
+
+:local(.container>div) {
+    box-sizing: border-box;
+    margin-top: -4em;
+    margin-right: 3em;
+}
+
+:local(.department) {
+    font-family: 'Nunito', sans-serif;
+    background-color: #E36053;
+    padding: 0.2em 0.4em;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+:local(.mainTitle) {
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 10px;
+    white-space: pre-line;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 3em;
+    font-weight: 800;
+    line-height: 1;
+}
+
+:local(.redDash) {
+    max-width: 1em;
+    display: block;
+    margin-bottom: 6em;
+}
+
+:local(.logo) {
+    max-width: 6em;
+    display: block;
+}
+
+:local(.copyright) {
+    text-align: center;
+    font-size: 0.5em;
+    position: absolute;
+    bottom: 20px;
+}
