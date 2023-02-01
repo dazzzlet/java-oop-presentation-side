@@ -11,7 +11,9 @@ export const WhiteLayout = ({ children, title }) => {
             <div className={styles.container}>
                 <h1>{title}</h1>
                 <img className={styles.redDash} src={redDash} alt="reddash" />
-                {children}
+                <div className={styles.content}>
+                    {children}
+                </div>
                 <img className={styles.logo} src={logo} alt="netcompany" />
                 <span className={styles.slideNumber}>{index + 1}</span>
             </div>

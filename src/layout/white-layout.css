@@ -8,10 +8,18 @@
     background-color: #fff;
     color: #0f2147;
     font-size: 32px;
+    display: flex;
+    flex-direction: column;
 }
 
 :local(.container>h1) {
     margin: 0;
+}
+
+:local(.container .content) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 :local(.container ul>li) {
