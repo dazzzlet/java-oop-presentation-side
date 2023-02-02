@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "mdx-deck example.mdx"
+    "bootstrap": "npm install && lerna bootstrap && lerna run --stream bootstrap",
+    "build": "lerna run build --parallel",
+    "build:standalone": "npm run build --prefix code-surfer/packs/standalone",
+    "test:step-parser": "npm run test:window --prefix code-surfer/packs/step-parser",
+    "start": "mdx-deck example.mdx --no-open"
   },
   "keywords": [
     "slide",
@@ -13,7 +17,17 @@
   "author": "truongnln",
   "license": "ISC",
   "dependencies": {
-    "code-surfer": "3.1.1",
+    "@code-surfer/step-parser": "3.1.1-custom",
+    "@code-surfer/standalone": "3.1.1-custom",
+    "@code-surfer/themes": "3.1.1",
+    "use-spring": "^0.2.2",
     "mdx-deck": "3.0.10"
+  },
+  "workspaces": [
+    "code-surfer/packs/step-parser",
+    "code-surfer/packs/standalone"
+  ],
+  "devDependencies": {
+    "lerna": "^6.4.1"
   }
 }
