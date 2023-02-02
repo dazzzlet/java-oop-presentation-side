@@ -8,7 +8,11 @@ export function ListerSteps({ children, showFirstItem }) {
         steps = React.Children.toArray(children.props.children);
         ulFlag = true;
     }
-    const targetStepIndex = useSteps(steps.length);
+    let length = steps.length;
+    if (showFirstItem) {
+        length = length - 1;
+    }
+    const targetStepIndex = useSteps(length);
 
     var getterFilter = (s, index) => index < targetStepIndex;
     if (showFirstItem) {

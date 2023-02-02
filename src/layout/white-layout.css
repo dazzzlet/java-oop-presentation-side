@@ -26,6 +26,13 @@
     line-height: 2em;
 }
 
+:local(.container p) {
+    margin-bottom: 0;
+}
+:local(.container h2),
+:local(.container h3) {
+    margin-bottom: 0.5em;
+}
 :local(.redDash) {
     max-width: 1em;
 }
