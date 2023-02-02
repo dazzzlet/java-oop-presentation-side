@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bootstrap": "npm install && lerna bootstrap && lerna run --stream bootstrap",
+    "bootstrap:template": "npm install && lerna bootstrap && lerna run --stream bootstrap",
     "build": "lerna run build --parallel",
     "build:standalone": "npm run build --prefix code-surfer/packs/standalone",
     "test:step-parser": "npm run test:window --prefix code-surfer/packs/step-parser",
