@@ -1,3 +1,4 @@
+import { codeDescriptionFilter } from "../components";
 import { parseMetastring } from "./codeblock-metastring-parser";
 
 export function isCode(element) {
@@ -5,6 +6,9 @@ export function isCode(element) {
 }
 
 export function readStepFromElement(element) {
+  if (codeDescriptionFilter(element)) {
+    return null;
+  }
   if (!isCode(element)) {
     throw new Error(
       "Invalid element inside <CodeSurfer/>. Make sure to add empty lines (no spaces) before and after each codeblock."

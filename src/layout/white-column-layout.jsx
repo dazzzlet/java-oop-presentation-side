@@ -94,7 +94,3 @@ function Column({ column }) {
         </div>
     );
 }
-
-export function LayoutColumn() {
-    return null;
-}

@@ -5,13 +5,14 @@ import { github } from "@code-surfer/themes";
 import { useDeck, Notes } from "mdx-deck";
 import { useNotes } from "../utils/notes";
 import { useStepSpring } from "../utils/use-step-spring";
+import { codeDescriptionFilter, noneCodeDescriptionFilter } from "../components";
 import styles from "./code-column-layout.css";
 const redDash = require('./../assets/red-dash.png');
 const logo = require('./../assets/logo-default.png');
 
-export function CodeColumnLayout({ children, title, sizes }) {
+export function CodeColumnLayout({ children, title, subTitle, sizes }) {
     const deck = useDeck();
-    const [columns, notesElements] = React.useMemo(
+    const [columns, notesElements, codeDescriptionElement] = React.useMemo(
         () => getColumnsFromChildren(children, sizes),
         [deck.index]
     );
@@ -24,6 +25,7 @@ export function CodeColumnLayout({ children, title, sizes }) {
             <div className={styles.container}>
                 <h1>{title}</h1>
                 <img className={styles.redDash} src={redDash} alt="reddash" />
+                {subTitle && (<h3>{subTitle}</h3>)}
                 <div className={styles.codeContainer}>
                     <div>
                         {columns.map((column, i) => (
@@ -31,6 +33,7 @@ export function CodeColumnLayout({ children, title, sizes }) {
                         ))}
                     </div>
                 </div>
+                {codeDescriptionElement}
                 <img className={styles.logo} src={logo} alt="netcompany" />
                 <span className={styles.slideNumber}>{deck.index + 1}</span>
             </div>
@@ -73,7 +76,7 @@ function getColumnsFromChildren(children, sizes = []) {
     if (stepElements.length === 0) {
         throw Error("No <Step/> found inside <CodeSurferColumns/>.");
     }
-    stepElements.forEach((stepElement, stepIndex) => {
+    stepElements.filter(noneCodeDescriptionFilter).forEach((stepElement, stepIndex) => {
         React.Children.toArray(stepElement.props.children).forEach(
             (cellElement, columnIndex) => {
                 if (!cellElement || !cellElement.props) {
@@ -106,7 +109,7 @@ function getColumnsFromChildren(children, sizes = []) {
         column.flex = sizes[columnIndex] || 1;
     });
 
-    const notesElements = stepElements.map(stepElement => {
+    const notesElements = stepElements.filter(noneCodeDescriptionFilter).map(stepElement => {
         const stepChildren = React.Children.toArray(stepElement.props.children);
         const notesElement = stepChildren.find(
             element => element.props && element.props.originalType === Notes
@@ -114,9 +117,9 @@ function getColumnsFromChildren(children, sizes = []) {
         return notesElement;
     });
 
-    return [columns, notesElements];
-}
+    const codeDescriptionElement = stepElements.filter(codeDescriptionFilter)
+        .map(element => React.Children.toArray(element.props.children))
+        .find(e => true);
 
-export function LayoutStep() {
-    return null;
+    return [columns, notesElements, codeDescriptionElement];
 }

@@ -16,22 +16,14 @@
     margin: 0;
 }
 
+:local(.container>h3) {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
 :local(.redDash) {
     max-width: 1em;
     margin-bottom: 10px;
-}
-
-:local(.codeContainer) {
-    flex: 1;
-    position: relative;
-}
-
-:local(.codeContainer>div) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 :local(.logo) {
