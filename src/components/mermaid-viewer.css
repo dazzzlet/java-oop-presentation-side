@@ -1,0 +1,17 @@
+:local(.codeContainer) {
+    flex: 1;
+    position: relative;
+    width: 100%;
+}
+
+:local(.codeContainer>div) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+:local(.codeContainer) .mermaid {
+    text-align: center;
+}
