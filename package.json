@@ -8,7 +8,8 @@
     "build": "lerna run build --parallel",
     "build:standalone": "npm run build --prefix code-surfer/packs/standalone",
     "test:step-parser": "npm run test:window --prefix code-surfer/packs/step-parser",
-    "start": "mdx-deck example.mdx --no-open"
+    "start": "mdx-deck example.mdx --no-open",
+    "postinstall": "patch-package"
   },
   "keywords": [
     "slide",
@@ -17,12 +18,14 @@
   "author": "truongnln",
   "license": "ISC",
   "dependencies": {
-    "@code-surfer/step-parser": "3.1.1-custom",
     "@code-surfer/standalone": "3.1.1-custom",
+    "@code-surfer/step-parser": "3.1.1-custom",
     "@code-surfer/themes": "3.1.1",
     "react-mermaid2": "^0.1.4",
-    "use-spring": "^0.2.2",
-    "mdx-deck": "3.0.10"
+    "mdx-deck": "3.0.10",
+    "patch-package": "^6.5.1",
+    "remark-import-partial": "^0.0.2",
+    "use-spring": "^0.2.2"
   },
   "workspaces": [
     "code-surfer/packs/step-parser",
