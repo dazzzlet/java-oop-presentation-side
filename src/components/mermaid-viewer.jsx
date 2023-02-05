@@ -15,7 +15,7 @@ export function MermaidViewer({ children }) {
     return (
         <div className={styles.codeContainer}>
             {steps.map((step, index) => (
-                <div key={index} style={{ maxHeight: '100%', height: '100%', visibility: (index != stepIndex) ? 'hidden' : undefined }}>
+                <div key={index} style={{ maxHeight: '100%', height: '100%', visibility: (index !== stepIndex) ? 'hidden' : undefined }}>
                     <Mermaid chart={step.code} />
                 </div>
             ))}

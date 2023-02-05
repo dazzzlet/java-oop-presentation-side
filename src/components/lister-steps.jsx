@@ -16,7 +16,7 @@ export function ListerSteps({ children, showFirstItem }) {
 
     var getterFilter = (s, index) => index < targetStepIndex;
     if (showFirstItem) {
-        var getterFilter = (s, index) => index <= targetStepIndex;
+        getterFilter = (s, index) => index <= targetStepIndex;
     }
 
     return ulFlag ? (
