@@ -24,7 +24,6 @@
     "react-mermaid2": "^0.1.4",
     "mdx-deck": "3.0.10",
     "patch-package": "^6.5.1",
-    "remark-import-partial": "^0.0.2",
     "use-spring": "^0.2.2"
   },
   "workspaces": [
