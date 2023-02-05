@@ -10,6 +10,32 @@ index 0000000..84151f0
 +  
 +  export default ImportSlides
 \ No newline at end of file
+diff --git a/node_modules/gatsby-theme-mdx-deck/src/components/presenter.js b/node_modules/gatsby-theme-mdx-deck/src/components/presenter.js
+index 7d33382..502e8bf 100644
+--- a/node_modules/gatsby-theme-mdx-deck/src/components/presenter.js
++++ b/node_modules/gatsby-theme-mdx-deck/src/components/presenter.js
+@@ -41,7 +41,7 @@ export const Presenter = ({ slides, children }) => {
+             p: 3,
+           }}>
+           <Zoom ratio={4 / 3} zoom={1 / 4}>
+-            <Slide slide={next} preview />
++            <Slide slide={next} index={context.index + 1} preview />
+           </Zoom>
+           {notes && (
+             <div
+diff --git a/node_modules/gatsby-theme-mdx-deck/src/components/slide-list.js b/node_modules/gatsby-theme-mdx-deck/src/components/slide-list.js
+index a8bdcd8..d647f1c 100644
+--- a/node_modules/gatsby-theme-mdx-deck/src/components/slide-list.js
++++ b/node_modules/gatsby-theme-mdx-deck/src/components/slide-list.js
+@@ -50,7 +50,7 @@ export const SlideList = ({
+             outline: index === i ? `4px solid cyan` : null,
+           }}>
+           <Zoom zoom={zoom} ratio={ratio}>
+-            <Slide slide={slide} preview />
++            <Slide slide={slide} index={i} preview />
+           </Zoom>
+         </div>
+       ))}
 diff --git a/node_modules/gatsby-theme-mdx-deck/src/index.js b/node_modules/gatsby-theme-mdx-deck/src/index.js
 index 61e519f..642d493 100644
 --- a/node_modules/gatsby-theme-mdx-deck/src/index.js
