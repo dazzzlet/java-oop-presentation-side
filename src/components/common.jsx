@@ -18,7 +18,3 @@ export const noneCodeDescriptionFilter = stepElement => {
 export const codeDescriptionFilter = stepElement => {
     return stepElement.props.mdxType === "CodeDescription";
 };
-
-export function ImportSlides() {
-    return null;
-}
