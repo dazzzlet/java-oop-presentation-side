@@ -3,6 +3,7 @@ import { readStepFromElement, isCode } from "../utils/step-reader";
 import { CodeSurfer } from "@code-surfer/standalone";
 import { github } from "@code-surfer/themes";
 import { useDeck, Notes } from "mdx-deck";
+import { ErrorBoundary } from "../components";
 import { useNotes } from "../utils/notes";
 import { useStepSpring } from "../utils/use-step-spring";
 import { codeDescriptionFilter, noneCodeDescriptionFilter } from "../components";
@@ -21,7 +22,7 @@ export function CodeColumnLayout({ children, title, subTitle, sizes }) {
     const progress = useStepSpring(columns[0].steps.length);
 
     return (
-        <>
+        <ErrorBoundary>
             <div className={styles.container}>
                 <h1>{title}</h1>
                 <img className={styles.redDash} src={redDash} alt="reddash" />
@@ -37,7 +38,7 @@ export function CodeColumnLayout({ children, title, subTitle, sizes }) {
                 <img className={styles.logo} src={logo} alt="netcompany" />
                 <span className={styles.slideNumber}>{deck.index + 1}</span>
             </div>
-        </>
+        </ErrorBoundary>
     );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { useDeck } from "mdx-deck";
+import { ErrorBoundary } from "../components";
 import styles from "./code-layout.css";
 import { getCodeDescriptionFromChildren, CodeViewer } from "../components";
 const redDash = require('./../assets/red-dash.png');
@@ -10,7 +11,7 @@ export function CodeLayout({ children, title, subTitle }) {
     const codeDescription = React.useMemo(getCodeDescriptionFromChildren(children), [deck.index]);
 
     return (
-        <>
+        <ErrorBoundary>
             <div className={styles.container}>
                 <h1>{title}</h1>
                 <img className={styles.redDash} src={redDash} alt="reddash" />
@@ -22,6 +23,6 @@ export function CodeLayout({ children, title, subTitle }) {
                 <img className={styles.logo} src={logo} alt="netcompany" />
                 <span className={styles.slideNumber}>{deck.index + 1}</span>
             </div>
-        </>
+        </ErrorBoundary>
     );
 }

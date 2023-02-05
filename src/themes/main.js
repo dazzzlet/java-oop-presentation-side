@@ -8,6 +8,9 @@ export default {
     primary: "blue",
   },
   styles: {
+    Slide: {
+      fontSize: "31px",
+    },
     Footer: {
       position: "fixed",
       bottom: 3,
@@ -24,5 +27,14 @@ export default {
       "-ms-flex-pack": 'center',
       justifyContent: 'center',
     },
+    blockquote: {
+      fontSize: '40px',
+      borderLeft: "0.5em solid #e36053",
+      fontWeight: "400",
+      paddingLeft: "1em",
+      "& p": {
+        marginTop: 0
+      }
+    }
   },
 };
