@@ -1,4 +1,5 @@
 import myTheme from "./src/themes/main";
+import { ImportSlides } from "./src/components/common";
 import { IntroductionLayout } from "./src/layout/introduction";
 import { WhiteLayout } from "./src/layout/white-layout";
 import { CodeLayout } from "./src/layout/code-layout";
@@ -6,6 +7,8 @@ import { CodeColumnLayout, LayoutStep } from "./src/layout/code-column-layout";
 import { CodeSurfer } from "@code-surfer/standalone";
 import "prismjs/components/prism-java";
 import { Head } from "mdx-deck";
+
+import mergeSlides from "./merge.mdx";
 
 export const theme = myTheme;
 
@@ -21,7 +24,7 @@ Hello
 
 ---
 
-{@import ./merge.mdx}
+<ImportSlides src={mergeSlides}/>
 
 ---
 
