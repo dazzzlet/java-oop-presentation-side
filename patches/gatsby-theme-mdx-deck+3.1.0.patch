@@ -1,3 +1,16 @@
+diff --git a/node_modules/gatsby-theme-mdx-deck/src/components/deck.js b/node_modules/gatsby-theme-mdx-deck/src/components/deck.js
+index 2ac1349..b61564f 100644
+--- a/node_modules/gatsby-theme-mdx-deck/src/components/deck.js
++++ b/node_modules/gatsby-theme-mdx-deck/src/components/deck.js
+@@ -37,7 +37,7 @@ const Print = ({ slides }) => {
+   return (
+     <Context.Provider value={context}>
+       {slides.map((slide, i) => (
+-        <Slide key={i} slide={slide} preview />
++        <Slide key={i} slide={slide} index={i} preview />
+       ))}
+     </Context.Provider>
+   )
 diff --git a/node_modules/gatsby-theme-mdx-deck/src/components/import-slides.js b/node_modules/gatsby-theme-mdx-deck/src/components/import-slides.js
 new file mode 100644
 index 0000000..84151f0
