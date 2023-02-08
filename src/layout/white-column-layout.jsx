@@ -75,19 +75,21 @@ function Column({ column }) {
                 color: column.text,
                 overflow: "hidden",
                 height: "100%",
-                marginLeft: "5px"
+                marginLeft: "5px",
+                position: "relative",
             }}
         >
             <div
                 style={{
+                    position: "absolute",
+                    inset: 0,
                     display: "flex",
                     justifyContent: "start",
                     alignItems: "start",
                     flexDirection: "column",
                     padding: '0.5em',
                     fontSize: column.fontSize,
-                    fontFamily: column.fontFamily,
-                    height: "100%"
+                    fontFamily: column.fontFamily
                 }}
             >
                 {column.elements}
