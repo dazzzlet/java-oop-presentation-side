@@ -1,7 +1,7 @@
 import React from "react";
 import { useDeck } from "mdx-deck";
 import { CodeSurfer } from "@code-surfer/standalone";
-import { github } from "@code-surfer/themes"
+import * as github from "../themes/code-surfer";
 import { readStepFromElement } from "../utils/step-reader";
 import { useStepSpring } from "../utils/use-step-spring";
 import styles from "./code-viewer.css";

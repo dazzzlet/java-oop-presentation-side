@@ -1,7 +1,7 @@
 import React from "react";
 import { readStepFromElement, isCode } from "../utils/step-reader";
 import { CodeSurfer } from "@code-surfer/standalone";
-import { github } from "@code-surfer/themes";
+import { theme as github } from "../themes/code-surfer";
 import { useDeck, Notes } from "mdx-deck";
 import { ErrorBoundary } from "../components";
 import { useNotes } from "../utils/notes";
